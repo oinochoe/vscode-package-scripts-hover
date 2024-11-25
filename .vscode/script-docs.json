@@ -1,0 +1,5 @@
+{
+  "dev": "Starts the local development server at port 5173",
+  "build:prod": "Creates an optimized production build",
+  "test:e2e": "Runs E2E tests using Cypress"
+}
