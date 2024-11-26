@@ -4,6 +4,8 @@ VS Code extension that shows helpful descriptions when hovering over package.jso
 
 ## Features
 
+![Demo](./images/example.gif)
+
 - Shows descriptions when hovering over scripts in package.json
 - Add custom descriptions via `.vscode/script-docs.json`
 - Displays script commands and usage instructions
@@ -27,7 +29,7 @@ Create `.vscode/script-docs.json` in your project:
 
 ## Requirements
 
-VS Code version 1.60.0 or higher
+VS Code version 1.77.0 or higher
 
 ## Extension Settings
 
@@ -36,6 +38,8 @@ packageScriptsHover.enableCustomDocs: Enable/disable loading custom documentatio
 ## Known Issues
 
 Report issues at GitHub Issues
+
+https://github.com/oinochoe/vscode-package-scripts-hover/issues
 
 ## Release Notes
 
