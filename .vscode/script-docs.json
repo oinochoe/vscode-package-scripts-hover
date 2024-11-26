@@ -1,5 +1,14 @@
 {
-  "dev": "Starts the local development server at port 5173",
-  "build:prod": "Creates an optimized production build",
-  "test:e2e": "Runs E2E tests using Cypress"
+  "vscode:prepublish": "Description for 'vscode:prepublish' script: npm run package",
+  "compile": "Description for 'compile' script: npm run check-types && npm run lint && node esbuild.js",
+  "watch": "Description for 'watch' script: npm-run-all -p watch:*",
+  "watch:esbuild": "Description for 'watch:esbuild' script: node esbuild.js --watch",
+  "watch:tsc": "Description for 'watch:tsc' script: tsc --noEmit --watch --project tsconfig.json",
+  "package": "Description for 'package' script: npm run check-types && npm run lint && node esbuild.js --production",
+  "compile-tests": "Description for 'compile-tests' script: tsc -p . --outDir out",
+  "watch-tests": "Description for 'watch-tests' script: tsc -p . -w --outDir out",
+  "pretest": "Description for 'pretest' script: npm run compile-tests && npm run compile && npm run lint",
+  "check-types": "Description for 'check-types' script: tsc --noEmit",
+  "lint": "Description for 'lint' script: eslint src",
+  "test": "Description for 'test' script: vscode-test"
 }

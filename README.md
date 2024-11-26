@@ -49,6 +49,21 @@ https://github.com/oinochoe/vscode-package-scripts-hover/issues
 
 ## Release Notes
 
+### 0.0.2 (2024-03-26)
+
+#### Added
+
+- New commands for extension management:
+  - `Enable Package Scripts Hover`: Manually enable hover functionality
+  - `Disable Package Scripts Hover`: Manually disable hover functionality
+  - `Reload Custom Docs`: Force reload documentation cache
+  - `Create Script Documentation Template`: Automatically generate script-docs.json template from package.json
+- Automatic script documentation template generation:
+  - Creates .vscode directory if needed
+  - Generates script-docs.json with default descriptions
+  - Asks for confirmation before overwriting existing file
+  - Opens generated file for immediate editing
+
 ### 0.0.1
 
 Initial release of Package Scripts Hover

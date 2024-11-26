@@ -2,7 +2,7 @@
   "name": "package-scripts-hover",
   "displayName": "Package Scripts Hover",
   "description": " Shows helpful descriptions when hovering over package.json scripts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "engines": {
     "vscode": ">=1.77.0"
@@ -48,6 +48,11 @@
       {
         "command": "package-scripts-hover.reload",
         "title": "Reload Custom Docs",
+        "category": "Package Scripts"
+      },
+      {
+        "command": "package-scripts-hover.createDocs",
+        "title": "Create Script Documentation Template",
         "category": "Package Scripts"
       }
     ],
