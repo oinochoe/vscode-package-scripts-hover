@@ -1,11 +1,22 @@
 {
   "name": "package-scripts-hover",
-  "displayName": "package-scripts-hover",
+  "displayName": "Package Scripts Hover",
   "description": " Shows helpful descriptions when hovering over package.json scripts",
   "version": "0.0.1",
   "license": "MIT",
   "engines": {
     "vscode": ">=1.77.0"
+  },
+  "keywords": [
+    "npm",
+    "scripts",
+    "hover",
+    "package.json",
+    "documentation"
+  ],
+  "galleryBanner": {
+    "color": "#C80000",
+    "theme": "dark"
   },
   "publisher": "yeongmin",
   "categories": [
