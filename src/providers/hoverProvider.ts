@@ -35,10 +35,14 @@ export class PackageJsonHoverProvider implements vscode.HoverProvider {
 
     const line = document.lineAt(position.line).text;
     const lineMatch = line.match(/"([^"]+)":/);
-    if (!lineMatch) return null;
+    if (!lineMatch) {
+      return null;
+    }
 
     const scriptName = lineMatch[1];
-    if (!packageJson.scripts?.[scriptName]) return null;
+    if (!packageJson.scripts?.[scriptName]) {
+      return null;
+    }
 
     const docs = await this.loadCustomDocs();
     const command = packageJson.scripts[scriptName];

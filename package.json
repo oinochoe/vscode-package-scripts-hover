@@ -3,13 +3,24 @@
   "displayName": "package-scripts-hover",
   "description": " Shows helpful descriptions when hovering over package.json scripts",
   "version": "0.0.1",
+  "license": "MIT",
   "engines": {
     "vscode": "^1.95.0"
   },
+  "publisher": "yeongmin",
   "categories": [
+    "Programming Languages",
     "Other"
   ],
-  "activationEvents": [],
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oinochoe/vscode-package-scripts-hover"
+  },
+  "activationEvents": [
+    "workspaceContains:package.json",
+    "onLanguage:json"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
@@ -43,7 +54,15 @@
           "description": "Path to custom documentation file"
         }
       }
-    }
+    },
+    "languages": [
+      {
+        "id": "json",
+        "filenames": [
+          "package.json"
+        ]
+      }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
@@ -60,16 +79,16 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.95.0",
     "@types/mocha": "^10.0.9",
     "@types/node": "20.x",
+    "@types/vscode": "^1.95.0",
     "@typescript-eslint/eslint-plugin": "^8.10.0",
     "@typescript-eslint/parser": "^8.7.0",
-    "eslint": "^9.13.0",
-    "esbuild": "^0.24.0",
-    "npm-run-all": "^4.1.5",
-    "typescript": "^5.6.3",
     "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.4.1"
+    "@vscode/test-electron": "^2.4.1",
+    "esbuild": "^0.24.0",
+    "eslint": "^9.13.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.6.3"
   }
 }
