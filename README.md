@@ -7,7 +7,9 @@ VS Code extension that shows helpful descriptions when hovering over package.jso
 ![Demo](./images/example.gif)
 
 - Hover over npm scripts to see descriptions
-- Supports custom documentation via `.vscode/script-docs.json`
+- Supports custom documentation via `.vscode/script-docs.json` in a nested structure.
+- Automatically converts old `.vscode/script-docs.json` format upon loading.
+- Documentation cache automatically reloads when `.vscode/script-docs.json` is changed, created, or deleted.
 - Built-in documentation for common scripts
 - Easy to customize and extend
 
@@ -19,14 +21,27 @@ VS Code extension that shows helpful descriptions when hovering over package.jso
 
 ## Custom Descriptions
 
-Create `.vscode/script-docs.json` in your project:
+Create or update `.vscode/script-docs.json` in your project's workspace root. The structure now supports multiple `package.json` files using their relative paths as keys:
 
 ```json
 {
-  "dev": "Starts development server",
-  "build": "Creates production build"
+  "package.json": {
+    "start": "Starts the main application",
+    "test": "Runs all tests"
+  },
+  "packages/frontend/package.json": {
+    "dev": "Starts frontend development server",
+    "build": "Builds frontend assets"
+  },
+  "packages/backend/package.json": {
+    "start:dev": "Starts backend server in dev mode"
+  }
 }
 ```
+
+If you have an existing `.vscode/script-docs.json` with the old flat structure, it will be automatically converted to the new nested structure format the first time the extension loads it.
+
+Use the command `Package Scripts Hover: Create/Update Script Documentation` to automatically generate/update this file based on all package.json files found in your workspace.
 
 ## Requirements
 
@@ -37,7 +52,7 @@ VS Code version 1.77.0 or higher
 This extension contributes the following settings:
 
 - `packageScriptsHover.enabled`: Enable/disable hover descriptions
-- `packageScriptsHover.customDocsPath`: Path to custom documentation file
+- `packageScriptsHover.customDocsPath`: Path to custom documentation file (defaults to `.vscode/script-docs.json`)
 
 ## Known Issues
 
@@ -48,6 +63,13 @@ Report issues at GitHub Issues
 https://github.com/oinochoe/vscode-package-scripts-hover/issues
 
 ## Release Notes
+
+### 0.1.0
+
+- Add support for nested package.json structures by scanning all package.json files in the workspace and using a nested structure in `.vscode/script-docs.json`.
+- Implement automatic conversion of old `.vscode/script-docs.json` format to the new nested structure upon loading.
+- Add automatic documentation cache reload when `.vscode/script-docs.json` is changed, created, or deleted (with debounce).
+- Update `createDocs` command to scan all package.json files and merge into the central `.vscode/script-docs.json`.
 
 ### 0.0.2 (2024-03-26)
 
